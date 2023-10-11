@@ -50,34 +50,20 @@ div.input-block span.placeholder {
   pointer-events: none;
 }
 
-div.input-block input.input-error,
-div.input-block select.input-error,
-div.input-block input.input-error:valid,
-div.input-block input.input-error:focus,
-div.input-block select.input-error:valid,
-div.input-block select.input-error:focus {
-  border: 2px solid red;
-}
-
 div.input-block input:valid + span.placeholder,
-div.input-block input:focus + span.placeholder,
-div.input-block select:valid + span.placeholder,
-div.input-block select:focus + span.placeholder {
+div.input-block input:focus + span.placeholder {
   transform: scale(0.8) translateY(-27px);
   background: #fff;
   padding: 0 4px;
 }
 
 div.input-block input:valid,
-div.input-block input:focus,
-div.input-block select:valid,
-div.input-block select:focus {
+div.input-block input:focus {
   color: #284b63;
   border: 2px solid #284b63;
 }
 
-div.input-block input:focus + span.placeholder,
-div.input-block select:focus + span.placeholder {
+div.input-block input:focus + span.placeholder {
   color: #284b63;
 }
 .button-parent {
@@ -110,11 +96,10 @@ div.input-block select:focus + span.placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin-bottom: 20px; */
 }
 
 .logo {
-  width: 150px;
+  width: 250px;
   align-items: center;
 }
 
@@ -179,19 +164,88 @@ a {
   color: black;
 }
 
-.main-img{
+.main-img {
   width: 100%;
   object-fit: fill;
 }
 
 .shirts-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 20px; 
-  padding: 50px 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 50px 50px;
 }
 
-.shirts-img{
-  width: 100%; 
-  max-width: 100%; 
+.shirts-img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.card {
+  background: #f1f1f1;
+  transition: all ease-out 0.1s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.shirt-desc {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px 10px 10px;
+}
+
+.qtd-total {
+  opacity: 0;
+  transition: all ease-out 0.2s;
+}
+
+.card:hover .qtd-total {
+  opacity: 1;
+}
+
+td input {
+  border: none;
+  background-color: white;
+  color: #212529;
+  font-family: "Poppins", sans-serif;
+}
+td input:focus {
+  outline: none;
+}
+
+td label {
+  display: flex;
+  width: 150px;
+  font-weight: 600;
+}
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+.button-parent-2 {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 50px 0;
+}
+
+select{
+  color: #495055;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  padding: 5px 5px;
+  width: 200px;
+  border-radius: 0.5rem;
+  border: 2px solid none;
+  outline: none;
+  background-color: #f2f2f2;
+  border: 2px solid #f2f2f2;
+}
+
+select:valid,
+select:focus {
+  color: #284b63;
+  border: 2px solid #284b63;
 }

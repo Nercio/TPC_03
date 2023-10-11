@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unfinished Legacy - Login</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -10,48 +11,44 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <title>Unknown</title>
   </head>
   <body>
-    <header id="header">
-      <div class="img-parent">
-        <a href=""
-          ><img
+    <div class="center">
+      <div>
+        <div class="img-parent" style="margin-bottom: 50px">
+          <img
             class="logo"
-            src="9be6cfebf73cccdc69d976114c58ce04.jpg"
+            src="assets/UnfinishedLegacy_logo_1000x.webp"
             alt="logo"
-        /></a>
-      </div>
-      <div class="header-right">
-        <div class="header-right-content">
-          <a href="#header"
-            ><div class="text"><span class="">Inicio</span></div></a
-          >
-          <a href=""
-            ><div class="text"><span class="">Produtos</span></div></a
-          >
-          <a href=""
-            ><div class="text"><span class="">Sobre</span></div></a
-          >
+          />
         </div>
-        <a href="login.html"><span>Login</span></a>
+        <form action="main.html">
+          <div class="input-block">
+            <input type="text" id="username" required />
+            <span class="placeholder">Nome de usuário</span>
+          </div>
+          <div class="input-block">
+            <input type="text" id="nuit" required />
+            <span class="placeholder">NUIT</span>
+          </div>
+          <div class="input-block">
+            <input type="text" id="morada" required />
+            <span class="placeholder">Morada</span>
+          </div>
+          <div class="input-block">
+            <input type="tel" id="telefone" required />
+            <span class="placeholder">Telefone</span>
+          </div>
+          <div class="input-block">
+            <input type="email" id="email" required />
+            <span class="placeholder">Email</span>
+          </div>
+          <div class="button-parent">
+            <div></div>
+            <button type="submit" class="button">Proximo</button>
+          </div>
+        </form>
       </div>
-    </header>
-    <main>
-      <section>
-        <img class="main-img" src="IMG_3007.JPG" alt="logo" />
-      </section>
-      <section>
-        <div class="shirts-grid">
-          <img class="shirts-img" src="rose-blc-back.webp" alt="logo" />
-          <img class="shirts-img" src="rose-blc-back.webp" alt="logo" />
-          <img class="shirts-img" src="rose-blc-back.webp" alt="logo" />
-          <img class="shirts-img" src="rose-blc-back.webp" alt="logo" />
-          <img class="shirts-img" src="rose-blc-back.webp" alt="logo" />
-          <img class="shirts-img" src="rose-blc-back.webp" alt="logo" />
-        </div>
-      </section>
-    </main>
-    <footer></footer>
+    </div>
   </body>
 </html>
