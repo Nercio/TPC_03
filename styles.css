@@ -6,6 +6,11 @@ body {
   color: inherit;
 }
 
+body,
+html {
+  scroll-behavior: smooth;
+}
+
 div.center {
   display: flex;
   flex-direction: column;
@@ -230,7 +235,7 @@ footer {
   margin: 50px 0 50px 0;
 }
 
-select{
+select {
   color: #495055;
   font-size: 0.875rem;
   line-height: 1.25rem;
