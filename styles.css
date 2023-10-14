@@ -2,7 +2,8 @@ body {
   margin: 0;
   padding: 0;
   background: none;
-  font-family: "Poppins", sans-serif;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   color: inherit;
 }
 
@@ -71,6 +72,7 @@ div.input-block input:focus {
 div.input-block input:focus + span.placeholder {
   color: #284b63;
 }
+
 .button-parent {
   display: flex;
   justify-content: space-between;
@@ -80,21 +82,20 @@ div.input-block input:focus + span.placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333;
+  background-color: #000;
   color: white;
   border: 1px solid black;
   margin-bottom: 4px;
   padding: 10px 25px;
-  border-radius: 0.375rem;
   cursor: pointer;
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 300;
   border: none;
   transition: all ease-in-out 0.1s;
 }
 
 .button:hover {
-  background-color: #666;
+  transform: translateY(-5px);
 }
 
 .img-parent {
@@ -129,7 +130,7 @@ header {
 }
 
 .text {
-  font-weight: 500;
+  font-weight: 400;
   display: flex;
   margin: 0 30px;
   position: relative;
@@ -164,6 +165,7 @@ header {
   visibility: visible;
   opacity: 1 !important;
 }
+
 a {
   text-decoration: none;
   color: black;
@@ -178,18 +180,17 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  padding: 50px 50px;
+  padding: 5px 50px 0px 50px;
 }
 
 .shirts-img {
   width: 100%;
-  max-width: 100%;
 }
 
 .card {
-  background: #f1f1f1;
   transition: all ease-out 0.1s;
 }
+
 .card:hover {
   transform: translateY(-5px);
 }
@@ -209,14 +210,34 @@ a {
   opacity: 1;
 }
 
+button,
+input {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
 td input {
   border: none;
-  background-color: white;
   color: #212529;
-  font-family: "Poppins", sans-serif;
+  width: 100%;
+  /* background-color: aqua; */
+  padding-right: 10px;
 }
-td input:focus {
+
+#subtotal {
+  border: none;
+  color: #212529;
+  font-size: 14px;
+  width: 60px;
+}
+
+td input:focus,
+#subtotal {
   outline: none;
+}
+
+td .input-price {
+  text-align: right;
 }
 
 td label {
@@ -224,8 +245,11 @@ td label {
   width: 150px;
   font-weight: 600;
 }
-footer {
+
+.shopping-card {
   display: flex;
+  padding: 0 150px;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -253,4 +277,59 @@ select:valid,
 select:focus {
   color: #284b63;
   border: 2px solid #284b63;
+}
+
+.add-to-cart-button {
+  border: none;
+  cursor: pointer;
+  padding: 15px 20px;
+  color: white;
+  background: #000;
+  margin-bottom: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -30px;
+}
+
+.card-details .price {
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.product-name {
+  font-size: 17px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.mini-product {
+  width: 70px;
+  object-fit: fill;
+}
+
+.divider {
+  background: #000;
+  width: 100%;
+  height: 1px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  border-bottom: 1px solid #d3d3d3;
+  padding: 8px;
 }

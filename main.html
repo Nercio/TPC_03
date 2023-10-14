@@ -4,13 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <script src="controls.js"></script>
     <title>Unfinished Legacy</title>
   </head>
   <body>
@@ -25,13 +18,13 @@
       <div class="header-right">
         <div class="header-right-content">
           <a href="#header"
-            ><div class="text"><span class="">Inicio</span></div></a
+            ><div class="text"><span class="">Início</span></div></a
           >
-          <a href="#produts"
+          <a href="#product-section"
             ><div class="text"><span class="">Produtos</span></div></a
           >
           <a href="#checkout"
-            ><div class="text"><span class="">Compras</span></div></a
+            ><div class="text"><span class="">Carrinho</span></div></a
           >
         </div>
         <a href="index.html"><span>Logout</span></a>
@@ -45,242 +38,54 @@
           alt="logo"
         />
       </section>
-      <section>
-        <div class="shirts-grid" id="produts">
-          <div class="card">
-            <img class="shirts-img" src="assets/TD-B_900x.webp" alt="logo" />
-            <div class="shirt-desc">
-              <span>THINK DIFFERENT, BLACK T-SHIRT</span><span> 2500 Mzn </span>
-              <div class="qtd-total">
-                <div>
-                  <span>Quantidade</span>
-                  <select id="qtdItem1" oninput="itemPrice(), summary()">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                </div>
-                <div>
-                  <span>Total</span>
-                  <span id="totItem1">0 </span>
-                  <span>MT</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              class="shirts-img"
-              src="assets/Rebirth-Contrast-F_900x.webp"
-              alt="logo"
-            />
-            <div class="shirt-desc">
-              <span>REBIRTH, CONTRAST STITCH</span><span> 5300 Mzn </span>
-              <div class="qtd-total">
-                <div>
-                  <span>Quantidade</span>
-                  <select id="qtdItem2" oninput="itemPrice(), summary()">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                </div>
-                <div>
-                  <span>Total</span>
-                  <span id="totItem2">0 </span>
-                  <span>MT</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              class="shirts-img"
-              src="assets/Rebirth-Sweats-F_900x.webp"
-              alt="logo"
-            />
-            <div class="shirt-desc">
-              <span>OG REBIRTH, ASH HOODIE</span><span> 8800 Mzn </span>
-              <div class="qtd-total">
-                <div>
-                  <span>Quantidade</span>
-                  <select id="qtdItem3" oninput="itemPrice(), summary()">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                </div>
-                <div>
-                  <span>Total</span>
-                  <span id="totItem3">0 </span>
-                  <span>MT</span>
-                </div>
-              </div>
-            </div>
-          </div>
+      <section id="product-section">
+        <div
+          style="
+            width: 100%;
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+          "
+        >
+          <span class="section-title">Coleções</span>
         </div>
+        <div id="product-container" class="shirts-grid"></div>
+      </section>
+      <section id="checkout">
+        <div
+          style="
+            width: 100%;
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+          "
+        >
+          <span class="section-title">Carrinho de Compras</span>
+        </div>
+        <form
+          action="http://asi.isutc.ac.mz:8080/asi/show_parameters.jsp"
+          onsubmit="return validation()"
+          target="_blank"
+        >
+          <div class="shopping-card">
+            <table class="table table-borderless" id="cart-table"></table>
+            <div style="display: flex; justify-content: end; margin-top: 10px">
+              <span style="font-size: 14px; margin-top: 1px">SUBTOTAL:</span>
+              <input
+                type="text"
+                readonly
+                name="TotalItems"
+                id="subtotal"
+                value="0 MZN"
+              />
+            </div>
+          </div>
+          <div class="button-parent-2">
+            <button type="submit" class="button">Comprar Items</button>
+          </div>
+        </form>
       </section>
     </main>
-    <footer id="checkout">
-      <form
-        action="http://asi.isutc.ac.mz:8080/asi/show_parameters.jsp"
-        onsubmit="return validation()"
-        target="_blank"
-      >
-        <div class="footer">
-          <table class="table table-borderless">
-            <tr>
-              <td><label>Nome do item</label></td>
-              <td><label>Preço</label></td>
-              <td><label>Quantidade</label></td>
-              <td><label>Total (MT)</label></td>
-            </tr>
-
-            <tr>
-              <td>
-                <input
-                  type="text"
-                  readonly
-                  name="Item1"
-                  id="item1"
-                  value="Think Different"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  readonly
-                  name="Preço1"
-                  id="preco1"
-                  value="2500"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  readonly
-                  name="Quantidade1"
-                  id="qtd1"
-                  value="0"
-                />
-              </td>
-              <td>
-                <input type="text" readonly name="Total1" id="tot1" value="0" />
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <input
-                  type="text"
-                  readonly
-                  name="Item2"
-                  id="item2"
-                  value="Rebirth"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  readonly
-                  name="Preço2"
-                  id="preco2"
-                  value="5300"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  readonly
-                  name="Quantidade2"
-                  id="qtd2"
-                  value="0"
-                />
-              </td>
-              <td>
-                <input type="text" readonly name="Total2" id="tot2" value="0" />
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <input
-                  type="text"
-                  readonly
-                  name="Item3"
-                  id="item3"
-                  value="OG Rebirth"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  readonly
-                  name="Preço3"
-                  id="preco3"
-                  value="8800"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  readonly
-                  name="Quantidade3"
-                  id="qtd3"
-                  value="0"
-                />
-              </td>
-              <td>
-                <input type="text" readonly name="Total3" id="tot3" value="0" />
-              </td>
-            </tr>
-
-            <tr>
-              <td></td>
-              <td></td>
-              <td style="font-weight: 600">Total:</td>
-
-              <td>
-                <input
-                  type="text"
-                  name="TotalItems"
-                  id="tot4"
-                  value="0"
-                  readonly
-                />
-              </td>
-            </tr>
-          </table>
-        </div>
-
-        <div class="button-parent-2">
-          <button type="submit" class="button">Comprar Items</button>
-        </div>
-      </form>
-    </footer>
+    <script src="controls.js"></script>
   </body>
 </html>
